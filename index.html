@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scaled=1.0">
+<title><center>Intrusion detection System</center></title>
+<!-- <style>
+body
+{
+background-image: url(img.jpg);
+}
+</style> -->
+</head>
+<body>
+
+<center>
+<div class="login">
+<h1>Intrusion detection System</h1>
+<form action="{{url_for('predict')}}"method="post">
+<input type="text" name="id" placeholder="" required="required"/><br>
+<input type="text" name="dur" placeholder="" required="required"/><br>
+<input type="text" name="proto" placeholder="" required="required"/><br>
+<!--<input type="text" name="trestbps" placeholder="trestbps" required="required"/><br>
+<input type="text" name="chol" placeholder="chol" required="required"/><br>
+<input type="text" name="fbs" placeholder="fbs" required="required"/><br>
+<input type="text" name="restecg" placeholder="restecg" required="required"/><br>
+<input type="text" name="thalach" placeholder="thalach" required="required"/><br>
+<input type="text" name="exang" placeholder="exang" required="required"/><br>
+<input type="text" name="oldpeak" placeholder="oldpeak" required="required"/><br>
+<input type="text" name="slope" placeholder="slope" required="required"/><br>
+<input type="text" name="ca" placeholder="ca" required="required"/><br>
+<input type="text" name="thal" placeholder="thal" required="required"/><p>-->
+
+
+<button type="submit" class="btn btn-primary btn-block btn-large">predict</button><p>
+</form>
+<br>
+<br>
+<h4>
+{{prediction}}</h4>
+</div>
+
+<div class="results">
+{% if prediction==1 %}
+<h1> <span class='danger'>Attack</span></h1>
+
+
+{% elif prediction==0 %}
+ <h1> <span class='safe'>Non Attack</span></h1>
+{% endif %}
+
+
+
+</center>
+</body>
+</html>
+
+
+
+
+
+
